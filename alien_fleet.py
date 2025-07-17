@@ -25,7 +25,6 @@ class AlienFleet:
         screen_h = self.game.settings.screen_h
 
         fleet_w, fleet_h = self.calculate_fleet_size(alien_w, screen_w, alien_h, screen_h)
-
         x_offset, y_offset = self.calculate_offsets(alien_w, alien_h, screen_w, fleet_w, fleet_h)
         self._create_rectangle_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
 
@@ -66,6 +65,22 @@ class AlienFleet:
         new_alien = Alien(self, current_x, current_y)
 
         self.fleet.add(new_alien)
+    
+    def update_fleet(self):
+        self.fleet.update()
+        self._check_fleet_edges()
+
+    def _check_fleet_edges(self):
+        alien: 'Alien'
+        for alien in self.fleet:
+            if alien.check_edges():
+                self._drop_alien_fleet()
+                self.fleet_direction *= -1
+                break
+        
+    def _drop_alien_fleet(self):
+        for alien in self.fleet:
+            alien.y += self.fleet_drop_speed
     
     def draw(self):
         alien: 'Alien'
