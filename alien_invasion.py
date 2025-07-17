@@ -38,7 +38,7 @@ class AlienInvasion:
         # Game Loop
         while self.running:
             self._check_events()
-            if self.game_active():
+            if self.game_active:
                 self.ship.update()
                 self.alien_fleet.update_fleet()
                 self._check_collisions()
