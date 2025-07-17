@@ -54,6 +54,11 @@ class AlienInvasion:
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
         if collisions:
              self.impact_sound.play()
+        
+        if self.alien_fleet.check_destroyed_status():
+            self._reset_level()
+    def _check_game_status(self):
+        pass
 
     def _reset_level(self):
         self.ship.arsenal.arsenal.empty()
