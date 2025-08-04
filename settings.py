@@ -19,7 +19,9 @@ class Settings:
         self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
         
         
-        
+        self.HUD_ship_w = 40   
+        self.HUD_ship_h = 30
+
 
         self.alien_file = Path.cwd() / 'Assets' / 'images' / 'enemy_4.png'
         
