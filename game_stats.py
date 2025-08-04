@@ -26,14 +26,14 @@ class GameStats():
     def _update_max_score(self):
         if self.score > self.max_score:
             self.max_score = self.score
-        print(f'Basic: {self.score}')
+        #print(f'Basic: {self.score}')
 
     def _update_score(self, collisions):
         for alien in collisions.values():
             self.score += self.settings.alien_points
     def update_level(self):
         self.level += 1
-        print(self.level)
+        #print(self.level)
 
     
         
