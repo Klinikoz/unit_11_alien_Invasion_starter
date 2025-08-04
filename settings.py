@@ -16,7 +16,7 @@ class Settings:
 
         self.bullet_file = Path.cwd() / 'Assets' / 'images' / 'laserBlast.png'
         self.laser_sound = Path.cwd() / 'Assets' / 'sound' / 'laser.mp3'
-        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'impactSound.mp3'
+        self.impact_sound = Path.cwd() / 'Assets' / 'sound' / 'explosion.wav'
         
         
         self.HUD_ship_w = 40   
@@ -37,7 +37,7 @@ class Settings:
         self.text_color = (255,255,255)
         self.button_font_size = 40
         self.HUD_font_size = 20
-        self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Silkscreen' / 'Silkscreen-Regular.ttf'
+        self.font_file = Path.cwd() / 'Assets' / 'Fonts' / 'Mojang-Regular.ttf'
         
     def initialize_dynamic_settings(self):
         self.ship_speed = 5
